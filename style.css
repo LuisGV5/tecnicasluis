@@ -1,0 +1,88 @@
+:root {
+    --cor-fundo-inicio: #1a237e;       /* Azul escuro */
+    --cor-fundo-fim: #00acc1;          /* Azul claro */
+    --cor-principal-inicio: #00695c;   /* Verde escuro */
+    --cor-principal-fim: #1de9b6;      /* Verde claro */
+    --cor-secundaria-inicio: #00acc1;  /* Azul claro */
+    --cor-secundaria-fim: #1de9b6;     /* Verde claro */
+    --cor-destaque-inicio: #1de9b6;    /* Verde claro */
+    --cor-destaque-fim: #1a237e;       /* Azul escuro */
+    --cor-texto: #ffffff;              /* Branco para o texto */
+}
+
+body {
+    background: linear-gradient(135deg, var(--cor-fundo-inicio), var(--cor-fundo-fim));
+    color: var(--cor-texto);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.caixa-principal {
+    background: linear-gradient(135deg, var(--cor-principal-inicio), var(--cor-principal-fim));
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: flutuar 3s ease-in-out infinite;
+    position: relative;
+}
+
+.caixa-principal:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+}
+
+@keyframes flutuar {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+h1 {
+    background: linear-gradient(90deg, var(--cor-destaque-inicio), var(--cor-destaque-fim));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: none;  /* Remove a sombra para texto mais nítido */
+    font-weight: 700;   /* Aumenta a espessura da fonte para maior legibilidade */
+    color: var(--cor-texto);  /* Garante que o texto seja branco */
+    margin-bottom: 20px;
+}
+
+button {
+    background: linear-gradient(135deg, var(--cor-secundaria-inicio), var(--cor-secundaria-fim));
+    color: var(--cor-texto);
+    border: none;
+    border-radius: 15px;
+    padding: 15px;
+    transition: background-color 0.3s, transform 0.3s;
+    cursor: pointer;
+    font-weight: 600;  /* Aumenta a espessura do texto nos botões */
+}
+
+button:hover {
+    background: linear-gradient(135deg, var(--cor-destaque-inicio), var(--cor-destaque-fim));
+    color: var(--cor-principal-fim);
+    transform: translateY(-2px);
+}
+.caixa-resultado{
+    display: none;
+}
+
+.caixa-resultado.mostrar{
+    display: block;
+}
+
+.caixa-alternativas{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
